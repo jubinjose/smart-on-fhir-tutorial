@@ -42,14 +42,14 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-
+          var weight = byCodes('29463-7');
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-
+          p.weight = getQuantityValueAndUnit(weight[0]);
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -84,6 +84,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      weight: {value: ''}
     };
   }
 
@@ -127,6 +128,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#weight').html(p.weight);
   };
 
 })(window);
